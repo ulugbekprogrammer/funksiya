@@ -226,6 +226,20 @@
 # print(res)
 
 
+# 13
+def MinMax(a, b):
+    if a > b:
+        return a
+    return b
+
+a = int(input("Son kiriting: "))    
+b = int(input("Son kiriting: "))
+
+res = MinMax(a, b)
+print(res)
+
+
+
 # def checknumberornot(a):
 #     if a.isdigit():
 #         return True
