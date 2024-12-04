@@ -212,34 +212,6 @@
 # res = MinMax(a, b)
 # print(res)
 
-
-# 12
-# def MinMax(a, b):
-#     if a > b:
-#         return a
-#     return b
-
-# a = int(input("Son kiriting: "))    
-# b = int(input("Son kiriting: "))
-
-# res = MinMax(a, b)
-# print(res)
-
-
-# 13
-def MinMax(a, b):
-    if a > b:
-        return a
-    return b
-
-a = int(input("Son kiriting: "))    
-b = int(input("Son kiriting: "))
-
-res = MinMax(a, b)
-print(res)
-
-
-
 # def checknumberornot(a):
 #     if a.isdigit():
 #         return True
@@ -249,3 +221,41 @@ print(res)
 
 # res = checknumberornot(a)
 # print(res)
+
+parking = [
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]
+]
+
+while True:
+    def printParking(parking):
+        for i in range(len(parking)):
+            for j in range(len(parking[i])):
+                print(parking[i][j], end=" ")
+            print()
+
+
+    def checkPos(row, col, parking):
+        if parking[row][col] == 0:
+            return True
+        return False
+
+
+    def addCar(row, col, parking, car):
+        if checkPos(row, col, parking):
+            parking[row][col] = car
+            return f"Add {car}"
+        return f"{car} not added"
+
+
+    def inputValue(value):
+        x = (input(f"Enter {value}: "))
+        return x
+
+    print(addCar(int(inputValue("Row: ")), int(inputValue("Col: ")), parking, inputValue("Car: ")))
+    # print(addCar(1, 0, parking, "Onix"))
+    printParking(parking)
+
